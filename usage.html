@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使い方 - 数式グラフジェネレーター</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">グラフ生成</a>
+            <a href="usage.html" class="nav-link active">使い方</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>使い方ガイド</h1>
+        
+        <div class="usage-section">
+            <h2>基本的な使い方</h2>
+            <ol class="usage-steps">
+                <li>数式を入力欄に入力します（例：x^2 + 2*x + 1）</li>
+                <li>グラフの種類を選択します（y = f(x) または x = f(y)）</li>
+                <li>x軸とy軸の範囲を設定します</li>
+                <li>「グラフ生成」ボタンをクリックします</li>
+            </ol>
+
+            <h2>使用可能な関数</h2>
+            <div class="function-list">
+                <h3>基本演算</h3>
+                <ul>
+                    <li><code>+</code> 加算</li>
+                    <li><code>-</code> 減算</li>
+                    <li><code>*</code> 乗算</li>
+                    <li><code>/</code> 除算</li>
+                    <li><code>^</code> べき乗</li>
+                </ul>
+
+                <h3>数学関数</h3>
+                <ul>
+                    <li><code>sin(x)</code> 正弦</li>
+                    <li><code>cos(x)</code> 余弦</li>
+                    <li><code>tan(x)</code> 正接</li>
+                    <li><code>log(x, b)</code> 対数（bは底、省略時は自然対数）</li>
+                    <li><code>sqrt(x)</code> 平方根</li>
+                    <li><code>abs(x)</code> 絶対値</li>
+                </ul>
+            </div>
+
+            <h2>3D表示について</h2>
+            <p>2Dグラフを3D空間で表示し、選択した軸で回転させることができます。</p>
+            <ul class="usage-tips">
+                <li>回転軸を選択して「3D回転」ボタンをクリックすると、グラフが1回転します</li>
+                <li>もう一度クリックすると回転が停止します</li>
+            </ul>
+
+            <h2>回転体の種類</h2>
+            <div class="shape-types">
+                <div class="shape-type">
+                    <h3>円柱型</h3>
+                    <p>直線を回転軸に平行に回転させると生成されます。</p>
+                </div>
+                <div class="shape-type">
+                    <h3>円錐型</h3>
+                    <p>直線を回転軸と交わるように回転させると生成されます。</p>
+                </div>
+                <div class="shape-type">
+                    <h3>トーラス（ドーナツ型）</h3>
+                    <p>曲線を回転軸から離れた位置で回転させると生成されます。</p>
+                </div>
+                <div class="shape-type">
+                    <h3>双曲面</h3>
+                    <p>双曲線を回転させると生成される、中央がくびれた形状です。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数式グラフジェネレーター</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link active">グラフ生成</a>
+            <a href="usage.html" class="nav-link">使い方</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>数式グラフジェネレーター</h1>
+        
+        <div class="input-section">
+            <div class="function-input">
+                <div class="equation-display">
+                    <span class="equation-prefix">y = </span>
+                    <input type="text" id="formula" value="x^2">
+                </div>
+                <div class="function-examples">
+                    使用可能な関数例:
+                    <code>x^2</code>,
+                    <code>sin(x)</code>,
+                    <code>log(x, 2)</code>,
+                    <code>x + 3</code>
+                </div>
+                <div class="variable-options">
+                    <label>
+                        <input type="radio" name="variable" value="y" checked> y = f(x)
+                    </label>
+                    <label>
+                        <input type="radio" name="variable" value="x"> x = f(y)
+                    </label>
+                </div>
+            </div>
+            <div class="ranges-container">
+                <div class="range-inputs">
+                    <div>
+                        <label for="xMin">X最小値:</label>
+                        <input type="number" id="xMin" value="-10">
+                    </div>
+                    <div>
+                        <label for="xMax">X最大値:</label>
+                        <input type="number" id="xMax" value="10">
+                    </div>
+                </div>
+                <div class="range-inputs">
+                    <div>
+                        <label for="yMin">Y最小値:</label>
+                        <input type="number" id="yMin" value="-10">
+                    </div>
+                    <div>
+                        <label for="yMax">Y最大値:</label>
+                        <input type="number" id="yMax" value="10">
+                    </div>
+                </div>
+            </div>
+            <div class="rotation-controls">
+                <label for="rotationAxis">回転軸:</label>
+                <select id="rotationAxis">
+                    <option value="x">X軸</option>
+                    <option value="y">Y軸</option>
+                    <option value="z">Z軸</option>
+                </select>
+                <div class="rotation-range">
+                    <div class="range-input">
+                        <label for="rotationStart">開始位置:</label>
+                        <input type="number" id="rotationStart" value="-5">
+                    </div>
+                    <div class="range-input">
+                        <label for="rotationEnd">終了位置:</label>
+                        <input type="number" id="rotationEnd" value="5">
+                    </div>
+                </div>
+                <button onclick="generateGraph()">グラフ生成</button>
+                <button onclick="rotate3D()">3D回転</button>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <div id="graph2D"></div>
+            <div id="graph3D"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
