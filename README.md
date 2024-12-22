@@ -20,9 +20,3 @@
 - MathJax：数式の表示
 - Plot.ly：2Dグラフの描画
 - Three.js：3D表示と回転
-
-## GitHub Pagesでの公開方法
-
-1. このリポジトリをGitHubにプッシュ
-2. Settings > Pages で、ブランチをmainに設定
-3. Save をクリックして公開
